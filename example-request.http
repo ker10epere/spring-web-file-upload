@@ -1,0 +1,25 @@
+POST http://localhost:8080/part
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="openssl-command.txt"
+
+< ./example-file-input.txt
+
+--boundary
+Content-Disposition: form-data; name="json"
+
+{
+"userId": 1,
+"id": 1,
+"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+--boundary--
+
+###
+
+POST http://localhost:8080/octet
+Content-Type: application/octet-stream
+
+< ./example-file-input.txt
